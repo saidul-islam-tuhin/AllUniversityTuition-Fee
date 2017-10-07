@@ -4,20 +4,23 @@
 <div class="container-fluid">
     <div class="row sticky-top">
         <div class="col bg-primary " >
-            <h4 class="text-white text-center  p-3">{{ subject }}</h4>
+            <h4 class="text-white text-center  p-3">{{ subject }} ({{ division }} division)</h4>
         </div>
     </div>
     <div class="row">
         <!-- Division menu link -->
         <div class="col-md-3 bg-faded ">
-            <div class="d-flex flex-column">
-                {% for division in divisions_list %}
-                    <div class=" bg-info text-white p-2 mt-2 text-center ">{{ division }}</div>
+            <div class="d-flex flex-column mt-2">
+                {% for divisions in divisions_list %}
+                    {% comment %}<div class=" bg-info text-white p-2 mt-2 text-center ">{{ division }}</div>{% endcomment %}
+                    <a href="{% url 'TutionFee:subject_wise' subject divisions %}" class="btn bg-info text-white btn-lg btn-block">
+                        {{ divisions }}
+                    </a>
                 {% endfor %}
             </div>
         </div>
         <!--  Show detaile in Table -->
-        <div class="col-md-9  ">
+        <div class="col-md-9 ">
             <table class="table ">
                 <thead>
                     <tr>
@@ -27,7 +30,6 @@
                       <th>City</th>
                     </tr>
                 </thead>
-
             </table>
         </div>
     </div>

@@ -1,12 +1,13 @@
 {% extends 'TutionFee/base.html' %}
 {% block  home_active%} active {% endblock %}
 {% block title_name %} Home {% endblock %}
+{% block back_color %}back_color{% endblock %}
 {% block body %}
-    <div class="container">
+    <div class="container back_color">
         <div class="row  mx-auto justify-content-around " style="text-align: center">
             {% for subject in subject_list %}
                 <div class="col-md-4 col-sm-12  mt-5 py-3 " style="text-align: center">
-                  <a class=" btn btn-outline-info btn-lg " href="{% url 'TutionFee:subject_wise' subject %}" role="button"> {{ subject }}</a>
+                  <a class=" btn btn-outline-info btn-lg " href="{% url 'TutionFee:subject_wise' subject All %}" role="button"> {{ subject }}</a>
                 </div>
             {% endfor %}
         </div>
