@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="todo@localhost" uuid="7951d2aa-cd7d-443d-bc2e-25381ba466ed">
+    <data-source name="Django default" uuid="5f5763cf-5c69-47d4-89a1-c2519e38451a">
       <database-info product="MySQL" version="5.5.8" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
-      <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-      <introspection-schemas>*:todo</introspection-schemas>
+      <introspection-schemas>*:todo2</introspection-schemas>
     </data-source>
   </component>
 </project>

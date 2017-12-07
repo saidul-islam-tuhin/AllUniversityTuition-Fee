@@ -11,9 +11,12 @@
         <!-- Division menu link -->
         <div class="col-md-3 bg-faded ">
             <div class="d-flex flex-column mt-2">
+                <a href="{% url 'TutionFee:subject_wise' subject  %}" class="btn bg-info text-white btn-lg btn-block">
+                    All division
+                </a>
                 {% for divisions in divisions_list %}
                     {% comment %}<div class=" bg-info text-white p-2 mt-2 text-center ">{{ division }}</div>{% endcomment %}
-                    <a href="{% url 'TutionFee:subject_wise' subject divisions %}" class="btn bg-info text-white btn-lg btn-block">
+                    <a href="{% url 'TutionFee:division_wise' subject divisions|lower %}" class="btn bg-info text-white btn-lg btn-block">
                         {{ divisions }}
                     </a>
                 {% endfor %}
@@ -30,6 +33,29 @@
                       <th>City</th>
                     </tr>
                 </thead>
+                <tbody>
+                {% if division%}
+                    {% for ob in  u_cost %}
+                        <tr>
+                        {% if ob.u_inf.city == division%}
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ ob.u_inf.u_name|title }}</td>
+                            <td>{{ ob.cost }} Tk</td>
+                            <td>{{ ob.u_inf.city|capfirst }}</td>
+                        {% endif %}
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    {% for foo in  u_cost %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ foo.u_inf.u_name}}</td>
+                            <td>{{ foo.cost}} Tk</td>
+                            <td>{{ foo.u_inf.city|capfirst }}</td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+                </tbody>
             </table>
         </div>
     </div>

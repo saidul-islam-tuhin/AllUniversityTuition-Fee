@@ -81,9 +81,12 @@ WSGI_APPLICATION = 'UniversityTutionFee.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'todo',
+        'NAME': 'todo2',
         'USER': 'root',
-        'PASSWORD': ''
+        'PASSWORD': '',
+        'OPTIONS': {
+            'sql_mode': 'traditional',
+        }
     }
 }
 
